@@ -1,0 +1,24 @@
+{
+    "name": "runner/hexletmasscoding-recursion-01",
+    "autoload": {
+        "files": [
+          "src/SumOfDigits.php",
+          "src/Fibonacci.php",
+          "src/ArrayDeepCount.php",
+          "src/ParseLinkedList.php"
+        ],
+        "psr-0": { 
+            "App\\Tests\\": "tests/",
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "hexlet-man",
+            "email": "funkylen@gmail.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^9.6"
+    }
+}
