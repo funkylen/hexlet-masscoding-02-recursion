@@ -17,5 +17,15 @@ namespace App\SumOfDigits;
 */
 function digital_root($number)
 {
-  return 0;
+  if ($number <= 9) {
+    return $number;
+  }
+  
+  $str = str_split($number);
+  $sumstr = array_sum($str);
+  if ($sumstr <= 9) {
+    return $sumstr;
+  } 
+  return digital_root($sumstr);
 }
+

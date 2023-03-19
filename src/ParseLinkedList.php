@@ -13,13 +13,34 @@ namespace App\ParseLinkedList;
 */
 function parse(string $string)
 {
-  return null;  
+  $arr = explode(" -> ", $string);
+  return makeNode($arr);
 }
 
+
+function makeNode($arr){
+  if ($arr[0] === "NULL") {
+    return NULL;
+  } else {
+    $item = (int) array_shift($arr);
+    $itemNext = makeNode($arr);
+    return new Node($item, $itemNext); 
+  }
+  
+}
+  
 class Node {
   public $data, $next;
   public function __construct($data, $next = NULL) {
     $this->data = $data;
     $this->next = $next;
   }
+}
+
+function make_node($data, $next = NULL) 
+{
+  return [
+    'data' => $data,
+    'next' => $next,
+  ];
 }

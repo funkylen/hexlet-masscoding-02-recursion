@@ -14,5 +14,12 @@ namespace App\ArrayDeepCount;
 * Link: https://www.codewars.com/kata/596f72bbe7cd7296d1000029/train/php
 */
 function deep_c(array $a): int {
-  return count($a, COUNT_RECURSIVE); // Rewrite this with your own logic
+  return array_reduce($a, function ($acc, $value) {
+    if (!is_array($value)) {
+      $acc++;
+      return $acc;
+    }
+    
+    return deep_c($value) + 1 + $acc;
+  }, 0);
 }
